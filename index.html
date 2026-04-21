@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alan's AI Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Interactive Prompt Collection</p>
+        <div class="hero-copy">
+          <div>
+            <h1>Alan's AI Library</h1>
+            <p class="hero-description">
+              Explore a curated set of few shot prompts and AI agents. Select one
+              from the library, review what it does, and then start a guided
+              conversation in the chat window.
+            </p>
+          </div>
+          <div class="hero-card">
+            <p class="hero-card-label">How it works</p>
+            <p>
+              Choose a prompt or agent from the lists below, then use the chat
+              window to test ideas, refine writing, and simulate collaborative AI
+              workflows.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="library-panel">
+          <section class="library-section">
+            <div class="section-heading">
+              <h2>Few Shot Prompts</h2>
+              <span>4 available</span>
+            </div>
+            <div class="button-list" id="prompt-list"></div>
+          </section>
+
+          <section class="library-section">
+            <div class="section-heading">
+              <h2>AI Agents</h2>
+              <span>4 available</span>
+            </div>
+            <div class="button-list" id="agent-list"></div>
+          </section>
+        </aside>
+
+        <section class="chat-panel" aria-label="AI chat window">
+          <div class="chat-header">
+            <div>
+              <p class="chat-label">Current Selection</p>
+              <h2 id="selection-name">Argument Refiner</h2>
+            </div>
+            <p class="selection-description" id="selection-description">
+              Helps students strengthen claims, evidence, and transitions in
+              persuasive writing.
+            </p>
+          </div>
+
+          <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+
+          <form class="chat-input-area" id="chat-form">
+            <label class="sr-only" for="user-input">User Input</label>
+            <textarea
+              id="user-input"
+              name="user-input"
+              rows="3"
+              placeholder="User Input"
+              required
+            ></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </section>
+      </main>
+
+      <section class="about-section">
+        <div class="about-copy">
+          <p class="eyebrow">About Alan</p>
+          <h2>Built to support ethical, collaborative AI writing practice.</h2>
+          <p>
+            Alan is a college technical writing instructor whose research focuses
+            on AI collaborative writing workflows. This library is designed to
+            make practical, classroom-ready AI interactions freely available to
+            students, teachers, and researchers.
+          </p>
+        </div>
+
+        <div class="donation-card">
+          <p class="donation-label">Support Free Access</p>
+          <p>
+            Donations help Alan expand the library, improve prompt design, and
+            keep these resources available at no cost.
+          </p>
+          <a class="donate-button" href="mailto:alan@example.com?subject=Support%20Alan's%20AI%20Library"
+            >Donate to Support Alan</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,419 @@
+:root {
+  --primary: #0d3b66;
+  --accent: #7f9db1;
+  --complement: #b4d6e3;
+  --background: #f7fafc;
+  --surface: #ffffff;
+  --surface-muted: #eef4f7;
+  --text: #18324a;
+  --text-soft: #4c6478;
+  --border: rgba(13, 59, 102, 0.12);
+  --shadow: 0 20px 60px rgba(13, 59, 102, 0.08);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(180, 214, 227, 0.5), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, var(--background) 100%);
+}
+
+button,
+textarea,
+a {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+
+.hero {
+  padding: 28px 0 36px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-copy {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.hero h1,
+.about-section h2,
+.chat-header h2,
+.section-heading h2 {
+  margin: 0;
+  font-family: "Libre Baskerville", serif;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  color: var(--primary);
+}
+
+.hero-description {
+  max-width: 62ch;
+  margin: 18px 0 0;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.hero-card,
+.donation-card,
+.library-panel,
+.chat-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.hero-card {
+  padding: 22px;
+  border-radius: var(--radius-md);
+}
+
+.hero-card-label,
+.chat-label,
+.donation-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-card p:last-child,
+.donation-card p:last-of-type {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(240px, 25%) minmax(0, 75%);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.library-panel,
+.chat-panel {
+  border-radius: var(--radius-lg);
+}
+
+.library-panel {
+  padding: 24px 20px;
+}
+
+.library-section + .library-section {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.section-heading span {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.library-button {
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  color: var(--primary);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.library-button:hover,
+.library-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(13, 59, 102, 0.16);
+  background: #f7fbfd;
+  outline: none;
+}
+
+.library-button.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(13, 59, 102, 0.18);
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 720px;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+  padding: 28px 30px 24px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(180, 214, 227, 0.24), rgba(255, 255, 255, 0.9));
+}
+
+.chat-header h2 {
+  margin-top: 2px;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.selection-description {
+  margin: 0;
+  align-self: end;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px 30px;
+  background:
+    linear-gradient(180deg, rgba(180, 214, 227, 0.08), transparent 28%),
+    #fcfeff;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 80%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #ffffff;
+  border-bottom-right-radius: 6px;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background: var(--surface-muted);
+  color: var(--text);
+  border: 1px solid rgba(127, 157, 177, 0.2);
+  border-bottom-left-radius: 6px;
+}
+
+.chat-input-area {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.chat-input-area textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 78px;
+  padding: 14px 16px;
+  border: 1px solid rgba(127, 157, 177, 0.4);
+  border-radius: 16px;
+  background: #fbfdff;
+  color: var(--text);
+}
+
+.chat-input-area textarea:focus {
+  outline: 2px solid rgba(13, 59, 102, 0.14);
+  border-color: var(--accent);
+}
+
+.chat-input-area button,
+.donate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.chat-input-area button {
+  min-width: 120px;
+  padding: 0 22px;
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(13, 59, 102, 0.18);
+}
+
+.chat-input-area button:hover,
+.chat-input-area button:focus-visible,
+.donate-button:hover,
+.donate-button:focus-visible {
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
+  margin-top: 32px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.about-section h2 {
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.25;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+  color: var(--text-soft);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.donation-card {
+  align-self: start;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(180, 214, 227, 0.26), rgba(255, 255, 255, 0.96));
+}
+
+.donate-button {
+  margin-top: 18px;
+  padding: 13px 20px;
+  background: var(--complement);
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 960px) {
+  .page-shell {
+    width: min(100% - 32px, 1200px);
+    padding-top: 28px;
+  }
+
+  .hero-copy,
+  .workspace,
+  .chat-header,
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-panel {
+    min-height: 680px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+  }
+
+  .hero,
+  .about-section {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .library-panel,
+  .chat-header,
+  .chat-messages,
+  .chat-input-area,
+  .about-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .chat-input-area {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-input-area button {
+    min-height: 48px;
+  }
+
+  .message {
+    max-width: 100%;
+  }
+}
