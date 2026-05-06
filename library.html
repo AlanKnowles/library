@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Alan's AI Library with few-shot prompts, AI agents, and an interactive chat interface."
+    />
+    <title>Alan’s AI Library | Alan Knowles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Alan Knowles home">
+          Alan Knowles
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="primary-menu">
+          <a href="index.html">Home</a>
+          <a href="library.html" aria-current="page">Alan’s AI Library</a>
+          <a href="index.html#contact">Contact</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span aria-hidden="true">◐</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="section library-intro">
+        <div class="section-inner">
+          <p class="eyebrow">Interactive Resource</p>
+          <h1>Alan’s AI Library</h1>
+          <p>
+            Select a few-shot prompt or AI agent, then interact with it using
+            the chat interface. Each item includes a short description and a
+            system prompt that shapes the simulated response.
+          </p>
+        </div>
+      </section>
+
+      <section class="section library-section" aria-label="AI library workspace">
+        <div class="section-inner library-layout">
+          <aside class="library-sidebar" aria-label="Prompt and agent library">
+            <div class="library-group">
+              <h2>Few-Shot Prompts</h2>
+              <ul class="item-list" id="prompt-list"></ul>
+            </div>
+            <div class="library-group">
+              <h2>AI Agents</h2>
+              <ul class="item-list" id="agent-list"></ul>
+            </div>
+          </aside>
+
+          <section class="chat-panel" aria-labelledby="selected-title">
+            <div class="selected-summary">
+              <div>
+                <p class="eyebrow" id="selected-type">Selected Tool</p>
+                <h2 id="selected-title">Choose a Library Item</h2>
+              </div>
+              <p id="selected-description">
+                Select a prompt or agent from the library to begin.
+              </p>
+            </div>
+
+            <div
+              class="chat-window"
+              id="chat-window"
+              role="log"
+              aria-live="polite"
+              aria-label="Conversation history"
+              tabindex="0"
+            ></div>
+
+            <form class="chat-form" id="chat-form">
+              <label for="user-input">User Input</label>
+              <div class="chat-input-row">
+                <textarea
+                  id="user-input"
+                  name="user-input"
+                  rows="2"
+                  placeholder="Type your message..."
+                  required
+                ></textarea>
+                <button class="button button-primary" type="submit">Send</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Alan Knowles. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
